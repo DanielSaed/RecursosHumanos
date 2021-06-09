@@ -24,7 +24,7 @@ function login (){
 
     axios({
         method: 'post',
-        url: 'https://danielsaed.github.io/RecursosHumanos/user/login',
+        url: 'http://localhost:3000/user/login',
         data:{
             user_mail: mail,
             user_password: pass
