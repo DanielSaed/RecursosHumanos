@@ -6,7 +6,7 @@ const pool = mysql.createPool({
     host: 'us-cdbr-east-04.cleardb.com',
     user: 'b7f0bea4438933',
     password: '049a9c99',
-    database: 'mysql://b7f0bea4438933:049a9c99@us-cdbr-east-04.cleardb.com/heroku_588ec93143aed8f?reconnect=true'
+    database: 'heroku_588ec93143aed8f'
 });
 
 pool.query = util.promisify(pool.query);
