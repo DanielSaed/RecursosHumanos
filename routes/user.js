@@ -2,7 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const user = express.Router();
 const db = require('../config/database');
-var int i == 0;
+
 
 user.post("/signin",async(req,res,next) => {
 const {user_name,user_mail,user_password} = req.body;
@@ -34,7 +34,7 @@ user.post("/login",async(req,res,next) => {
     }, "debugkey",{expiresIn: 10});
     return res.status(200).json({code:200, message: token })
     
-    var i = 1;
+    
   }
   else{
   return res.status(200).json({code:401, message:"Usuario y/o contra incorrectos"})
