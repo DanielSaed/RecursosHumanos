@@ -2,7 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const user = express.Router();
 const db = require('../config/database');
-var i == 0;
+var int i == 0;
 
 user.post("/signin",async(req,res,next) => {
 const {user_name,user_mail,user_password} = req.body;
