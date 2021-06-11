@@ -52,7 +52,7 @@ const rows = await db.query(query);
 
 return res.status(200).json({code:201, mesagge: rows})
 
-
+}
 });
 
 
