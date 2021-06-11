@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const user = express.Router();
 const db = require('../config/database');
 
-if(localStorage.getItem("token")){
+
 user.post("/signin",async(req,res,next) => {
 const {user_name,user_mail,user_password} = req.body;
 
@@ -42,6 +42,7 @@ user.post("/login",async(req,res,next) => {
 return res.status(500).json({code:500, message:"Campos incompletos"})
   
 });
+if(localStorage.getItem("token")){
 
 user.get("/",async(req,res,next) => {
 const query = "SELECT * FROM user ";
