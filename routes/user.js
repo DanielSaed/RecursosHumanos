@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const user = express.Router();
 const db = require('../config/database');
 
+if(localStorage.getItem("token")){
 user.post("/signin",async(req,res,next) => {
 const {user_name,user_mail,user_password} = req.body;
 
@@ -50,5 +51,8 @@ return res.status(200).json({code:201, mesagge: rows})
 
 
 });
+}else{
+  window.location.href = "https://recusroshumanos.000webhostapp.com";
+}
 
 module.exports = user;
