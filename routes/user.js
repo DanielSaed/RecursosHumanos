@@ -2,7 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const user = express.Router();
 const db = require('../config/database');
-
+var i == 0;
 
 user.post("/signin",async(req,res,next) => {
 const {user_name,user_mail,user_password} = req.body;
@@ -33,6 +33,8 @@ user.post("/login",async(req,res,next) => {
     user_mail: rows[0].user_mail
     }, "debugkey",{expiresIn: 10});
     return res.status(200).json({code:200, message: token })
+    
+    var i = 1;
   }
   else{
   return res.status(200).json({code:401, message:"Usuario y/o contra incorrectos"})
@@ -45,12 +47,12 @@ return res.status(500).json({code:500, message:"Campos incompletos"})
 
 user.get("/",async(req,res,next) => {
   
-  
+  if(i == 1){
 const query = "SELECT * FROM user ";
 const rows = await db.query(query);
 
 return res.status(200).json({code:201, mesagge: rows})
-
+  }
 
 });
 
