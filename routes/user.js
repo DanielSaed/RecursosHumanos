@@ -42,7 +42,6 @@ user.post("/login",async(req,res,next) => {
 return res.status(500).json({code:500, message:"Campos incompletos"})
   
 });
-if(localStorage.getItem("token")){
 
 user.get("/",async(req,res,next) => {
   
@@ -52,7 +51,7 @@ const rows = await db.query(query);
 
 return res.status(200).json({code:201, mesagge: rows})
 
-}
+
 });
 
 
