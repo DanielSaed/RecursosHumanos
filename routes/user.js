@@ -50,7 +50,7 @@ user.get("/",async(req,res,next) => {
   
 const query = "SELECT * FROM user ";
 const rows = await db.query(query);
-if(i == 1){
+ if(localStorage.getItem("token")){
 return res.status(200).json({code:201, mesagge: rows})
   }else{
   return res.status(200).json({code:401, message:"Usuario y/o contra incorrectos"})
